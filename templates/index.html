@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Housing in Pakistan</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Housing Price prediction</h1>
+    <form action="{{ url_for('predict')}}" method="POST">
+      <div class="form__fieldset">
+        <label for="Area_Labels_Category" class="form__label">Area Size Category:</label>
+        <select name="Area_Labels_Category" id="Area_Labels_Category" class="form__input form_select">
+            <option value="0-5 Marla">0-5 Marla</option>
+            <option value="5-10 Marla">5-10 Marla</option>
+            <option value="10-15 Marla">10-15 Marla</option>
+            <option value="15-20 Marla">15-20 Marla</option>
+            <option value="1-5 Kanal">1-5 Kanal</option>
+            <option value="5-10 Kanal">5-10 Kanal</option>
+            <option value="10-15 Kanal">10-15 Kanal</option>
+            <option value="15-20 Kanal">15-20 Kanal</option>
+            <option value="20-30 Kanal">20-30 Kanal</option>
+            <option value="30-40 Kanal">30-40 Kanal</option>
+            <option value="40-50 Kanal">40-50 Kanal</option>
+            <option value="50-60 Kanal">50-60 Kanal</option>
+            <option value="60-70 Kanal">60-70 Kanal</option>
+            <option value="70-80 Kanal">70-80 Kanal</option>
+            <option value="80-90 Kanal">80-90 Kanal</option>
+            <option value="90-100 Kanal">90-100 Kanal</option>
+            <option value="100-200 Kanal">100-200 Kanal</option>
+            <option value="200-300 Kanal">200-300 Kanal</option>
+            <option value="400-500 Kanal">400-500 Kanal</option>
+            <option value="500-600 Kanal">500-600 Kanal</option>
+            <option value="600-700 Kanal">600-700 Kanal</option>
+            <option value="700-800 Kanal">700-800 Kanal</option>
+        </select>
+      </div>
+      
+      
+      
+      <div class="form__fieldset">
+        <label for="bedroom" class="form__label">Number of Bedrooms:</label>
+        <select name="bedroom" id="bedroom" class="form__input form_select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="18">18</option>
+            <option value="21">21</option>
+            <option value="25">25</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="0">0</option>
+        </select>
+      </div>
+      
+      
+      
+      
+      <div class="form__fieldset">
+        <label for="bath" class="form__label">Number of Bathrooms:</label>
+        <select name="bath" id="bath" class="form__input form_select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="0">0</option>
+        </select>
+      </div>
+      
+      
+      <div class="form__fieldset">
+        <label for="purpose" class="form__label">Sale or Rent:</label>
+        <select name="purpose" id="purpose" class="form__input form_select">
+            <option value="For Sale">For Sale</option>
+            <option value="For Rent">For Rent</option>
+        </select>
+      </div>
+      
+      
+      
+      <div class="form__fieldset">
+        <label for="property" class="form__label">Type of property:</label>
+        <select name="property" id="property" class="form__input form_select">
+            <option value="Room">Room</option>
+            <option value="Lower Portion">Lower Portion</option>
+            <option value="Upper Portion">Upper Portion</option>
+            <option value="Flat">Flat</option>
+            <option value="Penthouse">Penthouse</option>
+            <option value="House">House</option>
+            <option value="Farm House">Farm House</option>
+        </select>
+      </div>
+      
+      
+      
+      <div class="form__fieldset">
+        <label for="city" class="form__label">City:</label>
+        <select name="city" id="city" class="form__input form_select">
+            <option value="Faisalabad">Faisalabad</option>
+            <option value="Islamabad">Islamabad</option>
+            <option value="Lahore">Lahore</option>
+            <option value="Karachi">Karachi</option>
+            <option value="Rawalpindi">Rawalpindi</option>
+        </select>
+      </div>
+      
+      
+      <div class="form__fieldset">
+        <label for="prov" class="form__label">Province Name:</label>
+        <select name="prov" id="prov" class="form__input form_select">
+            <option value="Islamabad Capital">Islamabad Capital</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Sindh">Sindh</option>
+        </select>
+      </div>
+      
+      
+      <div class="form__fieldset">
+        <label for="areatype" class="form__label">Type of Area:</label>
+        <select name="areatype" id="areatype" class="form__input form_select">
+            <option value="Marla">Marla</option>
+            <option value="Kanal">Kanal</option>
+        </select>
+      </div>
+         
+         
+      
+      <div class="form__fieldset">
+        <label for="size" class="form__label">Size:</label>
+        <input type="number" name="size" id="size" class="form__input" />
+      </div>
+
+
+      <div class="form__fieldset">
+        <input
+          class="form__submit form__input"
+          type="submit"
+          value="Calculate"
+        />
+      </div>
+    </form>
+    
+    {{prediction_text}}
+
+  </body>
+</html>
